@@ -1,0 +1,19 @@
+<div class="list-container">
+    <h2>My Subscriptions</h2>
+
+    <form (submit)="loadSubscriptions(); $event.preventDefault()">
+        <input type="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required />
+        <button type="submit">Load</button>
+    </form>
+
+    <div *ngIf="subscriptions.length">
+        <ul>
+            <li *ngFor="let sub of subscriptions">
+                {{ sub.start_date }} to {{ sub.end_date }} – {{ sub.formats }}
+                <button (click)="unsubscribe()">Unsubscribe</button>
+            </li>
+        </ul>
+    </div>
+
+    <p *ngIf="message">{{ message }}</p>
+</div>

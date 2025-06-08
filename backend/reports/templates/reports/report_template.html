@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daily Report</title>
+</head>
+
+<body>
+    <h1>Daily Summary for {{ date }}</h1>
+    <p>Hello {{ user.username }}, here is your report.</p>
+    {% if chart_path %}
+    <img src="{{ chart_path }}" width="500">
+    {% endif %}
+</body>
+
+</html>
