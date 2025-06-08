@@ -113,11 +113,22 @@ python manage.py send_reports
 - Reports are generated dynamically with current data and formatted professionally
 
 **Report Content Features:**
-- **PDF Reports**: Generated using `reportlab` with custom styling, charts, and professional formatting
-- **HTML Reports**: Rendered via Django templates with responsive design and interactive elements
-- **Data Integration**: Pulls real-time data for accurate, up-to-date reporting
-- **Customization**: Easy to extend with additional report types or data sources
 
+### 📄 PDF Report (Generated using `reportlab.pdfgen`)
+
+- **Library Used**: [`reportlab.pdfgen.canvas`](https://www.reportlab.com/documentation/)
+- **Purpose**: To generate print-friendly, professionally formatted documents in `.pdf` format.
+- **How it Works**:
+  - A `BytesIO` buffer is created to generate the PDF in memory.
+  - A `Canvas` object is instantiated from `reportlab.pdfgen`.
+  - Dynamic content (e.g., “Daily report for <user_email>”) is drawn using `drawString()`.
+  - The PDF is finalized with `showPage()` and `save()`, and then the buffer is returned for attachment.
+
+### 🌐 HTML Report (Rendered with Django Templates)
+
+- **Library Used**: `django.template.loader.render_to_string`
+- **Template**: `templates/reports/report_template.html`
+- **Purpose**: To generate responsive, visually engaging reports for email clients.
 ---
 
 ## 📊 UX and Creativity: Report Generation
