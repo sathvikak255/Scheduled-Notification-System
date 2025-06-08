@@ -155,6 +155,8 @@ Django's admin interface has been customized to provide comprehensive subscripti
    ```bash
    python manage.py runserver
    ```
+   ![Admin User Creation](frontend/src/assets/createsuperuser.png)
+
 
 2. **Navigate to:** `http://localhost:8000/admin/`
 
