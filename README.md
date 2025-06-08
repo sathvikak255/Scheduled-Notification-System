@@ -45,19 +45,14 @@ scheduled-notification-system/
 │               └── report_template.html
 │
 ├── frontend/                        # Angular application
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/          # Reusable UI components
-│   │   │   │   ├── header/          # Navigation and branding
-│   │   │   │   ├── subscription-form/  # Subscription management
-│   │   │   │   └── subscriptions-list/ # User subscription dashboard
-│   │   │   └── app.routes.ts        # Frontend routing configuration
-│   │   └── main.ts                  # Angular bootstrap
-│
-├── screenshots/                     # Documentation images
-│   ├── admin-login.png
-│   ├── admin-subscription-list.png
-│   └── admin-subscription-edit.png
+    ├── src/
+    │   ├── app/
+    │   │   ├── components/          # Reusable UI components
+    │   │   │   ├── header/          # Navigation and branding
+    │   │   │   ├── subscription-form/  # Subscription management
+    │   │   │   └── subscriptions-list/ # User subscription dashboard
+    │   │   └── app.routes.ts        # Frontend routing configuration
+    │   └── main.ts                  # Angular bootstrap
 ```
 
 This architecture ensures scalability, maintainability, and clear separation between frontend presentation and backend business logic.
