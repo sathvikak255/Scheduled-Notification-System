@@ -155,12 +155,18 @@ Django's admin interface has been customized to provide comprehensive subscripti
    ```bash
    python manage.py runserver
    ```
-   ![Admin User Creation](frontend/src/assets/createsuperuser.png)
-
 
 2. **Navigate to:** `http://localhost:8000/admin/`
 
 3. **Login** using your superuser credentials created during setup
+   ![Admin Login](frontend/src/assets/admin-login.png)
+   
+4. **Send Reports** The admin can send reports to all the active subscriptions using the following command
+   ```bash
+   python manage.py send_reports
+   ```
+   This command will send emails to all the active users and these sent email logs are stored in the `/backend/sent_mails` directory.
+   
 
 ### 🧑‍💼 Admin Features
 
@@ -197,13 +203,21 @@ Follow the interactive prompts to set up your admin account, then login at `/adm
 
 Visual documentation of the admin interface and key features:
 
-| View | Screenshot | Description |
-|------|------------|-------------|
-| **Admin Login** | `admin-login.png` | Secure authentication portal |
-| **Subscription Table** | `admin-subscription-list.png` | Comprehensive subscription overview |
-| **Edit Subscription** | `admin-subscription-edit.png` | Detailed subscription management |
+### 1. Creation of the super user
+![Admin User Creation](frontend/src/assets/createsuperuser.png)
 
-Place your screenshots inside the `screenshots/` folder to maintain organized documentation. These images help new administrators understand the interface and available functionality.
+### 2. Super user Login
+![Admin Login](frontend/src/assets/admin-login.png)
+
+### 3. Representation of the Admin Dashboard
+![Admin Dashboard](frontend/src/assets/admin-dashboard.png)
+
+### 4. Super User Logout
+![Admin Logout](frontend/src/assets/admin-logout.png)
+
+### 5. Admin Viewing the Report History
+![Report History](frontend/src/assets/report-history.png)
+
 
 ---
 
@@ -211,15 +225,28 @@ Place your screenshots inside the `screenshots/` folder to maintain organized do
 
 The REST API provides comprehensive functionality for frontend integration and third-party access:
 
-| Endpoint | Method | Description | Authentication |
-|----------|--------|-------------|----------------|
-| `/api/register/` | POST | User registration with email validation | None |
-| `/api/login/` | POST | Authentication and token generation | None |
-| `/api/subscribe/` | POST | Create new subscription with preferences | Required |
-| `/api/unsubscribe/` | POST | Cancel subscription using email | None |
-| `/api/subscriptions/` | GET | List user's active subscriptions | Required |
-| `/api/user/profile/` | GET | Retrieve user profile information | Required |
-| `/api/reports/preview/` | GET | Preview report format before subscribing | Required |
+| Endpoint | Method | Description | 
+|----------|--------|-------------|
+| `/api/subscribe/` | POST | Create new subscription with preferences | 
+| `/api/unsubscribe/` | POST | Cancel subscription using email | 
+| `/api/subscriptions/` | GET | List user's active subscriptions |
+
+
+### 1. The Subscription Form at `/subscribe`
+![Subscription Form](frontend/src/assets/sub-form.png)
+
+### 2. Subscription with preferred Format Successful
+![Subscription Success](frontend/src/assets/sub_success.png)
+
+### 3. List of subscriptions for the given email-id
+![Subscriptions List](frontend/src/assets/subs-list.png)
+
+### 4. Unsubscribe this email for the Service
+![Unsubscribe](frontend/src/assets/unsubscribe.png)
+
+### 5. Successful Unsubscribe for this user
+![Unsubscribe Successful](frontend/src/assets/unsub_success.png)
+
 
 **API Features:**
 - **RESTful Design**: Consistent, predictable endpoints following REST principles
